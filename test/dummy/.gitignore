@@ -1,0 +1,26 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all environment files.
+/.env*
+!/.env.example
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.gitkeep
+!/tmp/.gitkeep
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/.gitkeep
+
+# Ignore storage files.
+/storage/*
+!/storage/.gitkeep
+
+/public/assets
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+

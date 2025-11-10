@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Zero Engine - Dummy App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <!-- Load all CSS Zero styles with one file -->
+    <%= stylesheet_link_tag "css-zero", "data-turbo-track": "reload" %>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: #f8f9fa;
+      }
+      h1 {
+        color: #2c3e50;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 0.5rem;
+      }
+      h2 {
+        color: #34495e;
+        margin-top: 2rem;
+        border-bottom: 2px solid #95a5a6;
+        padding-bottom: 0.3rem;
+      }
+      .success-banner {
+        background: #d4edda;
+        border: 1px solid #c3e6cb;
+        border-radius: 0.5rem;
+        padding: 1rem 1.5rem;
+        margin: 1.5rem 0;
+        color: #155724;
+      }
+      .success-banner h3 {
+        margin: 0 0 0.5rem 0;
+        color: #155724;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+      .stat-card {
+        background: white;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+      .stat-card .number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #3498db;
+        margin: 0;
+      }
+      .stat-card .label {
+        color: #7f8c8d;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .asset-list {
+        background: white;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin: 1rem 0;
+      }
+      .asset-list ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 0.5rem;
+      }
+      .asset-list li {
+        padding: 0.5rem;
+        background: #f8f9fa;
+        border-radius: 0.25rem;
+        font-family: "Monaco", "Courier New", monospace;
+        font-size: 0.85rem;
+        border-left: 3px solid #3498db;
+      }
+      .asset-list li.controller {
+        border-left-color: #9b59b6;
+      }
+      .asset-list li.image {
+        border-left-color: #e74c3c;
+      }
+      .path-list {
+        background: white;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin: 1rem 0;
+      }
+      .path-list code {
+        display: block;
+        padding: 0.5rem;
+        background: #2c3e50;
+        color: #ecf0f1;
+        border-radius: 0.25rem;
+        margin: 0.5rem 0;
+        font-size: 0.85rem;
+        overflow-x: auto;
+      }
+      .legend {
+        display: flex;
+        gap: 1.5rem;
+        margin: 1rem 0;
+        font-size: 0.9rem;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .legend-color {
+        width: 3px;
+        height: 20px;
+        border-radius: 1px;
+      }
+      .legend-color.css { background: #3498db; }
+      .legend-color.js { background: #9b59b6; }
+      .legend-color.img { background: #e74c3c; }
+    </style>
+  </head>
+
+  <body>
+    <h1>🎨 CSS Zero Rails Engine</h1>
+    
+    <div class="success-banner">
+      <h3>✅ Engine Successfully Configured!</h3>
+      <p>This page demonstrates that the CSS Zero engine is properly configured and all assets are accessible via Propshaft.</p>
+      <% if @has_bundle %>
+        <p style="margin: 0.5rem 0 0 0; padding-top: 0.5rem; border-top: 1px solid #c3e6cb;">
+          <strong>📦 Bundle Available:</strong> <code>css-zero.css</code> imports all <%= @css_files.count %> stylesheets automatically
+        </p>
+      <% end %>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <p class="number"><%= @css_files.count %></p>
+        <p class="label">CSS Files</p>
+      </div>
+      <div class="stat-card">
+        <p class="number"><%= @js_controllers.count %></p>
+        <p class="label">JS Controllers</p>
+      </div>
+      <div class="stat-card">
+        <p class="number"><%= @images.count %></p>
+        <p class="label">SVG Images</p>
+      </div>
+      <div class="stat-card">
+        <p class="number"><%= @asset_paths.count %></p>
+        <p class="label">Asset Paths</p>
+      </div>
+    </div>
+
+    <h2>📄 CSS Stylesheets (<%= @css_files.count %>)</h2>
+    <div class="success-banner" style="background: #d1ecf1; border-color: #bee5eb; color: #0c5460; margin: 1rem 0;">
+      <h3 style="color: #0c5460;">💡 Two Ways to Use CSS Zero</h3>
+      <p><strong>Option 1:</strong> Load everything at once (easiest)<br>
+      <code>&lt;%= stylesheet_link_tag "css-zero" %&gt;</code></p>
+      <p style="margin-bottom: 0;"><strong>Option 2:</strong> Load individual files (for selective loading)<br>
+      <code>&lt;%= stylesheet_link_tag "css-zero/button", "css-zero/card" %&gt;</code></p>
+    </div>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color css"></div>
+        <span>Individual files available at: <code>css-zero/filename.css</code></span>
+      </div>
+    </div>
+    <div class="asset-list">
+      <% if @css_files.any? %>
+        <ul>
+          <% @css_files.each do |file| %>
+            <li><%= file %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No CSS files found.</p>
+      <% end %>
+    </div>
+
+    <h2>🎮 JavaScript Controllers (<%= @js_controllers.count %>)</h2>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color js"></div>
+        <span>Stimulus controllers for interactive components</span>
+      </div>
+    </div>
+    <div class="asset-list">
+      <% if @js_controllers.any? %>
+        <ul>
+          <% @js_controllers.each do |file| %>
+            <li class="controller"><%= file %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No JavaScript controllers found.</p>
+      <% end %>
+    </div>
+
+    <h2>🖼️ SVG Images (<%= @images.count %>)</h2>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color img"></div>
+        <span>Use via: <code>&lt;%= image_tag "css_zero/filename.svg" %&gt;</code></span>
+      </div>
+    </div>
+    <div class="asset-list">
+      <% if @images.any? %>
+        <ul>
+          <% @images.each do |file| %>
+            <li class="image"><%= file %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No images found.</p>
+      <% end %>
+    </div>
+
+    <h2>🛤️ Registered Asset Paths</h2>
+    <div class="path-list">
+      <% @asset_paths.each do |path| %>
+        <code><%= path %></code>
+      <% end %>
+    </div>
+
+    <div class="success-banner" style="margin-top: 2rem;">
+      <h3>✨ Ready to Use!</h3>
+      <p>All CSS Zero assets are now available in your Rails application through the asset pipeline.</p>
+      <p style="margin-bottom: 0;"><strong>Rails Version:</strong> <%= Rails.version %> | <strong>Environment:</strong> <%= Rails.env %></p>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,13 @@
+/* 
+ * CSS Zero Engine - Dummy App Stylesheet
+ * 
+ * This demonstrates using CSS Zero with the bundled css-zero.css file.
+ * 
+ * The css-zero.css file is loaded in the layout using:
+ *   <%= stylesheet_link_tag "css-zero" %>
+ * 
+ * You can also load individual files:
+ *   <%= stylesheet_link_tag "css-zero/button" %>
+ *   <%= stylesheet_link_tag "css-zero/card" %>
+ */
+

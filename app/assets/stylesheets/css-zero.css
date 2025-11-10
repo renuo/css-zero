@@ -1,0 +1,72 @@
+/**
+ * CSS Zero - Complete Bundle
+ * 
+ * This file imports all CSS Zero stylesheets.
+ * 
+ * Usage:
+ *   <%= stylesheet_link_tag "css-zero" %>
+ * 
+ * Or import individual files:
+ *   <%= stylesheet_link_tag "css-zero/variables" %>
+ *   <%= stylesheet_link_tag "css-zero/button" %>
+ */
+
+/* Core Styles */
+@import url("css-zero/variables.css");
+@import url("css-zero/reset.css");
+@import url("css-zero/colors.css");
+@import url("css-zero/typography.css");
+@import url("css-zero/sizes.css");
+@import url("css-zero/borders.css");
+@import url("css-zero/effects.css");
+@import url("css-zero/filters.css");
+@import url("css-zero/transforms.css");
+@import url("css-zero/transitions.css");
+@import url("css-zero/animations.css");
+@import url("css-zero/utilities.css");
+
+@import url("css-zero/base.css");
+
+/* Components */
+@import url("css-zero/accordion.css");
+@import url("css-zero/alert.css");
+@import url("css-zero/autoanimate.css");
+@import url("css-zero/avatar.css");
+@import url("css-zero/badge.css");
+@import url("css-zero/breadcrumb.css");
+@import url("css-zero/button.css");
+@import url("css-zero/card.css");
+@import url("css-zero/carousel.css");
+@import url("css-zero/color_scheme.css");
+@import url("css-zero/combobox.css");
+@import url("css-zero/command.css");
+@import url("css-zero/datepicker.css");
+@import url("css-zero/dialog.css");
+@import url("css-zero/dropzone.css");
+@import url("css-zero/dual_range.css");
+@import url("css-zero/flash.css");
+@import url("css-zero/group.css");
+@import url("css-zero/icons.css");
+@import url("css-zero/input.css");
+@import url("css-zero/input_clearable.css");
+@import url("css-zero/input_copyable.css");
+@import url("css-zero/input_otp.css");
+@import url("css-zero/input_revealable.css");
+@import url("css-zero/item.css");
+@import url("css-zero/layouts.css");
+@import url("css-zero/lightbox.css");
+@import url("css-zero/menu.css");
+@import url("css-zero/popover.css");
+@import url("css-zero/progress.css");
+@import url("css-zero/prose.css");
+@import url("css-zero/resizable.css");
+@import url("css-zero/separator.css");
+@import url("css-zero/sheet.css");
+@import url("css-zero/sidebar_menu.css");
+@import url("css-zero/skeleton.css");
+@import url("css-zero/switch.css");
+@import url("css-zero/table.css");
+@import url("css-zero/tabs.css");
+@import url("css-zero/toggle.css");
+@import url("css-zero/trix.css");
+

@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+# This script is a convenience script that runs the dummy app's bin/rails
+APP_ROOT = File.expand_path("../test/dummy", __dir__)
+
+Dir.chdir(APP_ROOT) do
+  exec "bin/rails", *ARGV
+end
+
