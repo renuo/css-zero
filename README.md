@@ -1,57 +1,35 @@
-# CSS Zero
+# CSS Zero (as a Rails Engine)
 
-An opinionated front-end starter kit for your Ruby on Rails application. You can think of it like a "no build" Tailwind CSS.
+Refer to the original repository for more information about the project: https://github.com/lazaronixon/css-zero
+
+When using this fork, the css-zero assets will be provided in a Rails Engine.
+
+This means you can use direclty CSS, Javascript, and images without copy-pasting them into your app.
 
 ## Installation
 
 Add this gem to your project.
 
 ```
-bundle add css-zero
+gem css-zero, github: renuo/css-zero
 ```
 
-Or install directly from GitHub.
+Enjoy your resources.
 
-```
-bundle add css-zero --github=lazaronixon/css-zero
-```
-
-Run the install command.
-
-```
-bin/rails generate css_zero:install
-```
-
-Add the additional components you need. (Optional)
-
-```
-bin/rails generate css_zero:add --help
-```
-
-## Components
-
-[<img src="https://github.com/user-attachments/assets/3a7fbd1e-5cc8-4476-a60c-52bc28efca29">](https://csszero.lazaronixon.com)
-
-## Utility classes and variables
-
-Check the [CSS files](app/assets/stylesheets/css-zero) in the repository to see the available variables and utility classes.
-
-## Scaffold
-
-This gem implements custom templates for scaffolds and authentication.
 
 ## Development
 
-To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+The only thing needed to do, is to periodically merge the changes from the original repo into this one.
+In order to do that there's two parts:
+
+a script `ruby check_sync.rb` that will check if all resources are present and up-to-date with upstream.
+
+`/sync` cursor command to sync the changes.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/lazaronixon/css-zero. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/lazaronixon/css-zero/blob/master/CODE_OF_CONDUCT.md).
+If you want to contribute to the engine do it here, if you want to contribute to css-zero, do it in the original repository.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the CSS Zero project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/lazaronixon/css-zero/blob/master/CODE_OF_CONDUCT.md).
