@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    css-zero (2.2.0)
+    css-zero (3.2.0)
       rails (>= 7.0)
 
 GEM
